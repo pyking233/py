@@ -48,13 +48,13 @@
 #     return lis
 
 
-di = {"k1": "ok!", "k2": [1, 2, 3, 4], "k3": [10, 20], "k4": 100}
+di = {"k1": "ok!", "k2": [1, 2, 3, 4], "k3": [10, 20]}
 
 
 def cut(dic):
     for key, value in dic.items():
-        if len(str(value)) > 2:
-            dic[key] = str(value)[:2]
+        if len(value) > 2:
+            dic[key] = value[:2]
     return dic
 
 
