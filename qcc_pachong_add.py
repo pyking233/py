@@ -10,10 +10,10 @@ driver = webdriver.Edge()  # 使用Edge
 driver.get(url_a)
 sleep(20)  # 等待登陆
 # driver.minimize_window()  #最小化窗口（未测试）
-file = open("company.csv", "w", newline='', encoding='utf-8')
+file = open("company.csv", "a", newline='', encoding='utf-8')
 csvwriter = csv.writer(file)
-csvwriter.writerow(['企业名称', '统一社会信用代码', '地址', '所属行业', '企业类型', '企业员工规模', '登记状态', '参保人数', '注册地址', '网址'])  # 预备写入csv文件
-for area in range(1, 17):  # 区县循环  1=东城区 2=西城区 3=朝阳区 4=丰台区 5=石景山区 6=海淀区 7=门头沟区 8=房山区 9=通州区 10=顺义区 11=昌平区 12=大兴区 13=怀柔区 14=平谷区 15=密云区 16=延庆区
+# csvwriter.writerow(['企业名称', '统一社会信用代码', '地址', '所属行业', '企业类型', '企业员工规模', '登记状态', '参保人数', '注册地址', '网址'])  # 预备写入csv文件
+for area in range(16, 17):  # 区县循环  1=东城区 2=西城区 3=朝阳区 4=丰台区 5=石景山区 6=海淀区 7=门头沟区 8=房山区 9=通州区 10=顺义区 11=昌平区 12=大兴区 13=怀柔区 14=平谷区 15=密云区 16=延庆区
     driver.find_element_by_css_selector(
         "body > div.container.m-t-md > div > div.col-md-9.no-padding > div:nth-child(1) > div:nth-child(2) > div > div.pills-after > a:nth-child({})".format(
             area)).click()
